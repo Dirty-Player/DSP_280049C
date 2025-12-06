@@ -16,25 +16,31 @@ void main(void)
 {
     //
     // Initializes system control, device clock, and peripherals
+    // 初始化系统控制，设备时钟，外设
     //
     Device_init();
 
     //
     // Initializes PIE and clear PIE registers. Disables CPU interrupts.
     // and clear all CPU interrupt flags.
+    // 初始化PIE并清除PIE寄存器。禁用CPU中断。
+    // 并清除所有CPU中断标志。
     //
     Interrupt_initModule();
 
     //
     // Initialize the PIE vector table with pointers to the shell interrupt
     // Service Routines (ISR).
+    // 用指向shell中断服务例程（ISR）的指针初始化PIE向量表。
     //
     Interrupt_initVectorTable();
 
     //
     // Board Initialization
+    // 初始化sys软件配置
     //
-//    Board_init();
+    // Board_init();
+
     //IO口初始化
     GPIO_setPinConfig(GPIO_23_GPIO23);
 
